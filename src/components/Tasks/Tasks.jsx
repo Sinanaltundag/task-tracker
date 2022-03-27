@@ -6,11 +6,11 @@ const Tasks = (props) => {
     console.log(props.delTaskProp)
   return (
     <div>
-    {props.dataProp?.map(task => <Task taskProps={task} key={task.taskId} delTaskProp={props.delTaskProp} isDoneProp={props.isDoneProp} {...props}/>)}
+    {props.dataProp?.map(task => <Task taskProps={task} key={task.taskId}  {...props}/>)}
         
     </div>
   )
 }
 
 export default Tasks
-// 
+// delTaskProp={props.delTaskProp} isDoneProp={props.isDoneProp}

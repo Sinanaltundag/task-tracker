@@ -1,20 +1,21 @@
-import {useState} from 'react'
+import {useState} from 'react';
 import AddTask from './AddTask';
-import Button from './Button'
+import Button from './Button';
 
 const Header = (props) => {
 
   // console.log(props)
     const [showAddBtn, setShowAddBtn] = useState(true);
 
-const addBtnChanger =()=>{
+const addBtnChanger =(e)=>{
     setShowAddBtn(!showAddBtn)
+    console.log(e.target.style)
 }
 let btnName= showAddBtn?"Show Add Task Bar":"Close Add Task Bar"
 
 
   return (
-    <div>
+    <div className="header">
     <h1>Task Tracker</h1>
     <Button click={addBtnChanger} btnName={btnName}/>
    

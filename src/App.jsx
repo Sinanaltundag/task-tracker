@@ -40,14 +40,15 @@ const isDone = (taskId) => {
     })
   );
 }
-
+console.log(data)
 
 
   return (
     <div className="App">
       <div className="container">
         <Header onNewTask= {(newTask)=>addTask(newTask)} taskId={lastTaskId}/>
-        <Tasks dataProp={data} delTaskProp={(taskId)=>delTask(taskId)} isDoneProp={isDone}/>
+        {data.length>0?<Tasks dataProp={data} delTaskProp={(taskId)=>delTask(taskId)} isDoneProp={(taskId)=>isDone(taskId)}/>: <div><h3>No Tasks to Show</h3></div> }
+        
       </div>
     </div>
   );
