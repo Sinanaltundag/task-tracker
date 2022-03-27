@@ -1,24 +1,21 @@
-
-
 .task {
-    padding: 1.5em;
-    .done{
-      text-decoration: line-through;
-    }
-    &-group {
-      display: flex;
+  padding: 1.5em;
+  .done {
+    text-decoration: line-through;
+  }
+  &-group {
+    display: flex;
     justify-content: space-between;
-    span{
+    span {
       cursor: pointer;
       padding: 5px;
       color: red;
     }
   }
-  &-date{
+  &-date {
     text-align: start;
   }
 }
-.task-done{
+.task-done {
   border-left: 5px solid darkred;
-  
 }

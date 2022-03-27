@@ -5,13 +5,7 @@ const AddTask = (props) => {
 const [taskInput, setTaskInput] = useState("")
 const [dateInput, setDateInput] = useState("")
 const today = new Date();
-console.log(today.valueOf())
-console.log(Date.parse(dateInput))
-Date.parse(dateInput)<today.valueOf()?console.log("first"):console.log("second")
-// console.log(taskInput,dateInput)
-// console.log(props.taskId)
 const newTask = taskInput&&dateInput&&{taskId:(props.taskId+1), taskTitle:taskInput,taskDate:dateInput, isDone:false}
-// console.log(newTask)
     const handleFormSubmit=(e)=>{
 e.preventDefault();
 Date.parse(dateInput)>today.valueOf()?newTask&&props.onNewTask(newTask):alert("Invalid Date: Please select date after now")
@@ -20,7 +14,6 @@ setDateInput("")
 
     }
 
-    // console.log(props)
   return (
     <div>
         <form onSubmit={handleFormSubmit}>
