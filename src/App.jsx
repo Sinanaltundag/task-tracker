@@ -47,7 +47,7 @@ console.log(data)
     <div className="App">
       <div className="container">
         <Header onNewTask= {(newTask)=>addTask(newTask)} taskId={lastTaskId}/>
-        {data.length>0?<Tasks dataProp={data} delTaskProp={(taskId)=>delTask(taskId)} isDoneProp={(taskId)=>isDone(taskId)}/>: <div><h3>No Tasks to Show</h3></div> }
+        {data.length>0?<Tasks dataProp={data} delTaskProp={(taskId)=>delTask(taskId)} isDoneProp={(taskId)=>isDone(taskId)}/>: <div className="no-task"><h3>No Tasks to Show</h3></div> }
         
       </div>
     </div>

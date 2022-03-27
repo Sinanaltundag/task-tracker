@@ -24,7 +24,7 @@ const handleIsDone =()=>{
         <span onClick={handleDelete}>X</span>
     </div>
         
-        <p className={`task-date ${isDone ? 'done':""}`}>{taskProps.taskProps.taskDate}</p>
+        <p className={`task-date ${isDone ? 'done':""}`}>{taskProps.taskProps.taskDate.split("T").join(" Time: ")}</p>
         
     </div>
   )
