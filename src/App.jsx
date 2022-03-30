@@ -8,7 +8,20 @@ function App() {
     localStorage.getItem("data") &&
       setData(JSON.parse(localStorage.getItem("data")));
   };
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    {
+      "taskId": 1,
+      "taskTitle": "Start Study",
+      "taskDate": "2022-03-31T06:32",
+      "isDone": false
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Have Breakfast",
+      "taskDate": "2022-03-31T09:40",
+      "isDone": false
+    }
+  ]);
   const setLocalStorage = (data) => {
     localStorage.setItem("data", JSON.stringify(data));
   };
