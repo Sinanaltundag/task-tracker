@@ -13,7 +13,7 @@ function App() {
     localStorage.setItem("data", JSON.stringify(data));
   };
 
-  const addTask = async (newTask) => {
+  const addTask =  (newTask) => {
     setData(data.concat(newTask));
   };
   let lastTaskId = data.length !== 0 ? data[data.length - 1].taskId : 0;
@@ -37,17 +37,29 @@ function App() {
       })
     );
   };
+const deleteAllTasks =()=>{
+  setData([])
+}
 
   return (
     <div className="App">
       <div className="container">
         <Header onNewTask={(newTask) => addTask(newTask)} taskId={lastTaskId} />
         {data.length > 0 ? (
+          <div>
           <Tasks
             dataProp={data}
             delTaskProp={(taskId) => delTask(taskId)}
             isDoneProp={(taskId) => isDone(taskId)}
           />
+          <button style={{
+    backgroundColor: "red",
+    color: "white",
+    padding: "0.5rem",
+    borderRadius: "5px",
+    border: "none"
+  }} onClick={deleteAllTasks}>Delete All Tasks</button>
+          </div>
         ) : (
           <div className="no-task">
             <h3>No Tasks to Show</h3>
@@ -59,3 +71,5 @@ function App() {
 }
 
 export default App;
+
+
